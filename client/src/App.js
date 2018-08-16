@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Books from "./Books";
+
+//import Books from "./Books";
 import "./App.css";
 import { HashRouter, NavLink, Route } from "react-router-dom";
 import StudentResultBoard from './components/results.js';
 import Admission from './components/admission';
-
+import Button from '@material-ui/core/Button';
 
 
 class App extends Component {
@@ -23,14 +23,16 @@ class App extends Component {
     return (
       <div >
         <HashRouter>
-          <div className="class" >
+          <div  >
             <ul>
-              <NavLink to="/">StudentResultBoard</NavLink>
-              <NavLink to="/Admission">Admission</NavLink>
+              <div className="nav">
+               <li><NavLink to="/"><Button >StudentResultBoard</Button></NavLink></li>
+                <li> <NavLink to="/Admission"><Button>Admission</Button></NavLink></li>
+              </div >
             </ul>
             <div>
-              <Route path="/" component={StudentResultBoard}/>
-              <Route exact path="/Admission" component={Admission}/>
+              <Route exact path="/" component={StudentResultBoard} />
+              <Route exact path="/Admission" component={Admission} />
             </div>
 
           </div>
@@ -52,3 +54,4 @@ class App extends Component {
 }
 
 export default App;
+
