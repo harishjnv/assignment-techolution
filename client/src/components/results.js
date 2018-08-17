@@ -77,7 +77,7 @@ class StudentResultBoard extends Component {
                          <TableCell>Abhi</TableCell>
 
                        </TableRow> */}
-                      
+                       
                        {
                            this.state.studentInfo.map((person, i) => <GetRow key = {i} data = {person} />)
                        }
@@ -94,20 +94,19 @@ class StudentResultBoard extends Component {
  class GetRow extends Component{
      render(){
          return(
-             <div>
                  <TableRow>
-                 <TableCell >
+                 <ResultRow>
                      {this.props.data.name}
-                 </TableCell>
-                 </TableRow>
-                 {/* <ResultRow>
+                 </ResultRow>
+                 <ResultRow>
                      {this.props.data.rollNumber}
                  </ResultRow>
                  <ResultRow>
-                     {this.props.data.name}
-                 </ResultRow> */}
+                     {this.props.data.marks.English+this.props.data.marks.Maths+this.props.data.marks.Science}
+                 </ResultRow>
+                 </TableRow>
                  
-             </div>
+            
          )
      }
  }
